@@ -1,5 +1,6 @@
 package com.mybatis3.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -53,7 +54,7 @@ public class Student {
                 "studId=" + studId +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", dob=" + dob +
+                ", dob=" + new SimpleDateFormat("yyyy-MM-dd").format(dob) +
                 '}';
     }
 }

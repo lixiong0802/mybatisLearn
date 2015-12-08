@@ -1,11 +1,16 @@
 package com.mybatis3.services;
 
-import java.util.*;
-
-import org.junit.*;
 import com.mybatis3.domain.Student;
+
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Date;
+import java.util.List;
 
 public class StudentServiceTest {
 
@@ -51,4 +56,27 @@ public class StudentServiceTest {
         Student newStudent = studentService.findStudentById(id);
         Assert.assertNotNull(newStudent);
     }
+
+    @Test
+    public void testUpdateStudent() {
+
+        Student student = new Student();
+        int id = 5;
+        student.setStudId(id);
+        student.setName("lixiong_" + id);
+        student.setEmail("lixiong_" + id + "gmail.com");
+        student.setDob(new Date());
+
+        studentService.updateStudent(student);
+
+    }
+
+    @Test
+    public void testDeleteStudent() {
+
+        int id = 12;
+        studentService.deleteStudent(id);
+
+    }
+
 }

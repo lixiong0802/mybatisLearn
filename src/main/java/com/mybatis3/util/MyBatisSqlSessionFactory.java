@@ -13,7 +13,7 @@ public class MyBatisSqlSessionFactory {
             InputStream inputStream;
             try {
                 inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-                sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+                sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, "development");
             } catch (IOException e) {
                 throw new RuntimeException(e.getCause());
             }
